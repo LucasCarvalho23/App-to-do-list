@@ -1,6 +1,8 @@
+/* NAVBAR */
 .menu {
 	margin-bottom: 25px;
 }
+
 
 .app {
 	margin-top: 25px;
@@ -13,8 +15,8 @@
 
 li.list-group-item.active {
 	background-color: #fff;
-	border-color: #009933;
-    border-left:solid 10px #009933;
+	border-color: #a3a3a3;
+    border-left:solid 10px #757575;
 }
 
 li a {
@@ -26,7 +28,7 @@ li a:hover {
 }
 
 h4 {
-	color: #009933 !important;
+	color: #494949 !important;
 }
 
 

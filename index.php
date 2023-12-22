@@ -26,8 +26,8 @@
 				<div class="col-md-3 menu">
 					<ul class="list-group">
 						<li class="list-group-item active"><a href="#">Pending tasks</a></li>
-						<li class="list-group-item"><a href="nova_tarefa.php">New task</a></li>
-						<li class="list-group-item"><a href="todas_tarefas.php">All tasks</a></li>
+						<li class="list-group-item"><a href="new_tasks.php">New task</a></li>
+						<li class="list-group-item"><a href="all_tasks.php">All tasks</a></li>
 					</ul>
 				</div>
 

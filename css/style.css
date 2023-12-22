@@ -3,15 +3,26 @@
 	margin-bottom: 25px;
 }
 
+/* NEW TASK */
+.pagina {
+	border:solid 1px #DFDFDF;
+	padding:25px !important;
+}
+
+.description-class {
+	padding-bottom: 25px;
+}
+
+.description-class > input {
+	margin-top: 10px;
+}
+
 
 .app {
 	margin-top: 25px;
 }
 
-.pagina {
-	border:solid 1px #DFDFDF;
-	padding:25px !important;
-}
+
 
 li.list-group-item.active {
 	background-color: #fff;

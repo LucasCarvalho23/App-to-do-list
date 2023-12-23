@@ -20,6 +20,14 @@
 			</div>
 		</nav>
 
+		<?php 
+			if ( isset($_GET['inclusion']) && $_GET['inclusion'] == 1 ) {
+		?>
+		<div class = "bg-secondary pt-2 text-white d-flex justify-content-center">
+			<h5>Task included with success.</h5>
+		</div>
+		<?php } ?>
+
 		<div class="container app">
 			<div class="row">
 
@@ -39,11 +47,11 @@
 								<h4>New task</h4>
 								<hr />
 
-								<form>
+								<form method = "post" action="task_controller.php">
 
 									<div class="form-group description-class">
 										<label>Task description:</label>
-										<input type="text" class="form-control" placeholder="Exemple: Wash the car">
+										<input type="text" class="form-control" placeholder="Exemple: Wash the car" name = "description">
 									</div>
 
 									<button class="btn btn-secondary">Register</button>

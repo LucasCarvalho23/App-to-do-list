@@ -18,7 +18,16 @@
         }
 
         public function read() {
-
+            $query = '
+                select 
+                    t.id, s.status, t.task 
+                from 
+                    tb_tasks as t
+                    left join tb_status as s on (t.id_status = s.id)
+            ';
+            $stmt = $this->conection->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
         public function update() {

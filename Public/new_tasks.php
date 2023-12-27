@@ -47,7 +47,7 @@
 								<h4>New task</h4>
 								<hr />
 
-								<form method = "post" action="task_controller.php">
+								<form method = "post" action="task_controller.php?action=insert">
 
 									<div class="form-group description-class">
 										<label>Task description:</label>

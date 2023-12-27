@@ -4,14 +4,28 @@
     require "../Private/service_task.php";
     require "../Private/conection.php";
 
-    $task = new Task();
-    $task->__set('task',$_POST['description']);
+    $action = isset($_GET['action']) ? $_GET['action'] : $action;
 
-    $conection = new Conection();
+    if ( $action == 'insert' ) {
 
-    $serviceTask = new ServiceTask($conection, $task);
-    $serviceTask->create();
+        $task = new Task();
+        $task->__set('task',$_POST['description']);
+    
+        $conection = new Conection();
+    
+        $serviceTask = new ServiceTask($conection, $task);
+        $serviceTask->create();
+    
+        header('Location: new_tasks.php?inclusion=1');
 
-    header('Location: new_tasks.php?inclusion=1');
+    } else if ($action == 'recover') {
+
+        $task = new Task();
+        $conection = new Conection();
+
+        $serviceTask = new ServiceTask($conection, $task);
+        $tasks = $serviceTask->read();
+       
+    }
 
 ?>

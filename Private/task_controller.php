@@ -47,6 +47,15 @@
         $serviceTask->remove();
         header('Location: all_tasks.php');
         
+    } else if ($action == 'accomplished') {
+
+        $task = new Task();
+        $task->__set('id', $_GET['id'])->__set('id_status', 2);
+        $conection = new Conection();
+        $serviceTask = new ServiceTask($conection, $task);
+        $serviceTask->accomplished();
+        header('Location: all_tasks.php');
+
     }
 
 ?>

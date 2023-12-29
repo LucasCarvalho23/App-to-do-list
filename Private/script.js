@@ -35,3 +35,7 @@ function edit(id, textTask) {
 function remove(id) {
     location.href = 'all_tasks.php?action=remove&id='+id;
 }
+
+function accomplished(id) {
+    location.href = 'all_tasks.php?action=accomplished&id='+id;
+}

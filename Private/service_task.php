@@ -45,6 +45,13 @@
             $stmt->execute();
         }
 
+        public function accomplished() {
+            $query = 'update tb_tasks set id_status = ? where id = ?';
+            $stmt = $this->conection->prepare($query);
+            $stmt->bindValue(1, $this->task->__get('id_status'));
+            $stmt->bindValue(2, $this->task->__get('id'));
+            return $stmt->execute();
+        }
 
 
     }

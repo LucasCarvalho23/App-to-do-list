@@ -13,6 +13,7 @@
 
         public function __set($attribute, $value) {
             $this->$attribute = $value;
+            return $this;
         }
 
     }

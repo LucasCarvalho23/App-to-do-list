@@ -29,8 +29,7 @@
     } else if ($action == 'update') {
 
         $task = new Task();
-        $task->__set('id', $_POST['id']);
-        $task->__set('task', $_POST['task']);
+        $task->__set('id', $_POST['id'])->__set('task', $_POST['task']);
 
         $conection = new Conection();
         $serviceTask = new ServiceTask($conection, $task);

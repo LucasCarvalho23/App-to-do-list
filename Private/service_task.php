@@ -31,10 +31,10 @@
         }
 
         public function update() {
-            $query = 'update tb_tasks set task = :task where id = :id';
+            $query = 'update tb_tasks set task = ? where id = ?';
             $stmt = $this->conection->prepare($query);
-            $stmt->bindValue(':task', $this->task->__get('task'));
-            $stmt->bindValue(':id', $this->task->__get('id'));
+            $stmt->bindValue(1, $this->task->__get('task'));
+            $stmt->bindValue(2, $this->task->__get('id'));
             return $stmt->execute();
         }
 

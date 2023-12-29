@@ -38,6 +38,15 @@
             header('Location: all_tasks.php');
         }
 
+    } else if ($action == 'remove') {
+
+        $task = new Task();
+        $task->__set('id', $_GET['id']);
+        $conection = new Conection();
+        $serviceTask = new ServiceTask($conection, $task);
+        $serviceTask->remove();
+        header('Location: all_tasks.php');
+        
     }
 
 ?>

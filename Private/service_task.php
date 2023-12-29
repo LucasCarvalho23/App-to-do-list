@@ -38,8 +38,11 @@
             return $stmt->execute();
         }
 
-        public function delete() {
-
+        public function remove() {
+            $query = 'delete from tb_tasks where id = :id';
+            $stmt = $this->conection->prepare($query);
+            $stmt->bindValue(':id', $this->task->__get('id'));
+            $stmt->execute();
         }
 
 

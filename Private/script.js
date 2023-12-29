@@ -31,3 +31,7 @@ function edit(id, textTask) {
     task.insertBefore(form, task[0])
     
 }
+
+function remove(id) {
+    location.href = 'all_tasks.php?action=remove&id='+id;
+}

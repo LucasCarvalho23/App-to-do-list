@@ -6,7 +6,7 @@ function edit(id, textTask) {
     let task = document.querySelector ("#task_" + id)
     let inputId = document.createElement('input')
 
-    form.action = '#'
+    form.action = 'task_controller.php?action=update'
     form.method = 'post'
     form.className= 'row'
 

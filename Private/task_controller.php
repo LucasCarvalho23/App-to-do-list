@@ -26,6 +26,19 @@
         $serviceTask = new ServiceTask($conection, $task);
         $tasks = $serviceTask->read();
        
+    } else if ($action == 'update') {
+
+        $task = new Task();
+        $task->__set('id', $_POST['id']);
+        $task->__set('task', $_POST['task']);
+
+        $conection = new Conection();
+        $serviceTask = new ServiceTask($conection, $task);
+
+        if ($serviceTask->update()) {
+            header('Location: all_tasks.php');
+        }
+
     }
 
 ?>

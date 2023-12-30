@@ -53,6 +53,22 @@
             return $stmt->execute();
         }
 
+        public function recoverPendingTasks() {
+            $query = '
+                select 
+                    t.id, s.status, t.task 
+                from 
+                    tb_tasks as t
+                    left join tb_status as s on (t.id_status = s.id)
+                where
+                    t.id_status = :id_status
+            ';
+            $stmt = $this->conection->prepare($query);
+            $stmt->bindValue(':id_status', $this->task->__get('id_status'));
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
+
 
     }
 

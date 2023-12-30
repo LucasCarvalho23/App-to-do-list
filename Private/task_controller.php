@@ -35,7 +35,11 @@
         $serviceTask = new ServiceTask($conection, $task);
 
         if ($serviceTask->update()) {
-            header('Location: all_tasks.php');
+            if (isset($_GET['pag']) && $_GET['pag'] == 'index') {
+                header('location: index.php');
+            } else {
+                header('location: all_tasks.php');
+            }
         }
 
     } else if ($action == 'remove') {
@@ -45,7 +49,11 @@
         $conection = new Conection();
         $serviceTask = new ServiceTask($conection, $task);
         $serviceTask->remove();
-        header('Location: all_tasks.php');
+        if (isset($_GET['pag']) && $_GET['pag'] == 'index') {
+            header('location: index.php');
+        } else {
+            header('location: all_tasks.php');
+        }
         
     } else if ($action == 'accomplished') {
 
@@ -54,8 +62,20 @@
         $conection = new Conection();
         $serviceTask = new ServiceTask($conection, $task);
         $serviceTask->accomplished();
-        header('Location: all_tasks.php');
+        if (isset($_GET['pag']) && $_GET['pag'] == 'index') {
+            header('location: index.php');
+        } else {
+            header('location: all_tasks.php');
+        }
 
+    } else if ($action == 'recoverPendingTasks') {
+        $task = new Task();
+        $conection = new Conection();
+        $task->__set('id_status', 1);
+        $serviceTask = new ServiceTask($conection, $task);
+        $tasks = $serviceTask->recoverPendingTasks();
     }
+
+    
 
 ?>

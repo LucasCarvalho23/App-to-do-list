@@ -6,7 +6,7 @@ function edit(id, textTask) {
     let task = document.querySelector ("#task_" + id)
     let inputId = document.createElement('input')
 
-    form.action = 'task_controller.php?action=update'
+    form.action = 'index.php?pag=index&action=update'
     form.method = 'post'
     form.className= 'row'
 
@@ -33,9 +33,9 @@ function edit(id, textTask) {
 }
 
 function remove(id) {
-    location.href = 'all_tasks.php?action=remove&id='+id;
+    location.href = 'index.php?pag=index&action=remove&id='+id;
 }
 
 function accomplished(id) {
-    location.href = 'all_tasks.php?action=accomplished&id='+id;
+    location.href = 'index.php?pag=index&action=accomplished&id='+id;
 }
